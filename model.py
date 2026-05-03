@@ -10,12 +10,7 @@
 #                 └─ DecoderBlock x3  (skip-connection upsampling)
 #                     └─ MapRefinement → haze_map  (spatial haze density)
 #                     └─ Classifier   → class_logits (Clear/Low/Moderate/Heavy)
-#
-# Changes from v2:
-#   1. HazeLoss now uses Focal Loss instead of plain CrossEntropy for Heavy class
-#   2. Label smoothing (0.1) added to prevent overconfident boundary predictions
-#   3. Default Heavy class weight increased 1.5 → 2.0 (Heavy is the hardest class)
-#   4. Consistency loss weight increased 0.1 → 0.2 (stronger reg↔cls alignment)
+
 
 import math
 import torch
